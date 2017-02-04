@@ -1,0 +1,52 @@
+{
+    "name": "rhosocial/lottery",
+    "description": "Collect records of lottery issued in China.",
+    "keywords": ["china", "lottery", "collector", "trend"],
+    "homepage": "https://www.rhosocial.com/products/lottery",
+    "type": "project",
+    "license": "AGPLv3",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii2": "~2.0.11",
+        "yiisoft/yii2-bootstrap": "~2.0.6",
+        "yiisoft/yii2-swiftmailer": "~2.0.6",
+        "rhosocial/yii2-base-models": "dev-master",
+        "yiisoft/yii2-httpclient": "^2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
