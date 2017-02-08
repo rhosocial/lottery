@@ -21,6 +21,12 @@ $config = [
             ],
         ],
         'db' => $db,
+        'lottery' => [
+            'class' => 'rhosocial\lottery\components\Lottery',
+            'lotteryMap' => [
+                'ssq' => 'rhosocial\lottery\models\lottery\welfare\DoubleColor\Lottery',
+            ],
+        ],
     ],
     'params' => $params,
     /*

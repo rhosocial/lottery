@@ -47,12 +47,18 @@ interface LotteryInterface
     
     public static function getDataFromStorage($params = null);
     
+    public static function extractFromSource($params = null);
+    
+    public static function extractFromStorage($params = null);
+    
     /**
      * Extract lottery details from data.
      * @param mixed $data
      * @return mixed lottery records.
      */
     public static function extractData($data);
+    
+    public static function deleteLottery($period);
     
     /**
      * Update lottery record.

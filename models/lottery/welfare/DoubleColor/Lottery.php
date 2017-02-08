@@ -102,6 +102,11 @@ class Lottery implements LotteryInterface
         return $records;
     }
     
+    public static function extractFromStorage($params = null)
+    {
+        
+    }
+    
     /**
      * 
      * @param mixed $data
@@ -116,6 +121,11 @@ class Lottery implements LotteryInterface
             }
         }
         return $records;
+    }
+    
+    public static function deleteLottery($period)
+    {
+        return Record::deleteAll(['id' => $period]);
     }
     
     /**

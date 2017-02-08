@@ -39,6 +39,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'lottery' => [
+            'class' => 'rhosocial\lottery\components\Lottery',
+            'lotteryMap' => [
+                'ssq' => 'rhosocial\lottery\models\lottery\welfare\DoubleColor\Lottery',
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

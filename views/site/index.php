@@ -1,9 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
-use rhosocial\lottery\models\lottery\welfare\DoubleColor\Lottery;
 
-$this->title = 'My Yii Application';
+$this->title = 'Lottery';
 ?>
 <div class="site-index">
 
@@ -17,9 +16,9 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <div class="col-lg-12">
-                <?php foreach (Lottery::extractFromSource(['periods' => 20]) as $record) {
+                <?php foreach (\Yii::$app->lottery->ssq->extractFromSource(['periods' => 20]) as $record) {
                     var_dump($record->getOpenNumbers());
-                    Lottery::updateLottery($record->getPeriod(), $record->opencode, $record->opentime);
+                    \Yii::$app->lottery->ssq->updateLottery($record->getPeriod(), $record->opencode, $record->opentime);
                 } ?>
             </div>
             <div class="col-lg-4">
