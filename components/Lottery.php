@@ -74,4 +74,18 @@ class Lottery extends Component
         /* @var $class LotteryInterface */
         return $class::deleteLottery($period);
     }
+    
+    public function getNavDropdownList()
+    {
+        $list = [
+            'label' => \Yii::t('app', 'Lottery'),
+        ];
+        foreach ($this->lotteryMap as $key => $lottery) {
+            $list['items'][] = [
+                'label' => $this->$key->lotteryName(),
+                'url' => '#',
+            ];
+        }
+        return $list;
+    }
 }
